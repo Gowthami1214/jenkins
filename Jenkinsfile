@@ -1,23 +1,24 @@
+
+12303842 - Abhishek Kumar Mandal
+11:30 AM
 pipeline {
-    agent any
+agent any
 
-    stages {
-        stage('Install') {
-            steps {
-                bat 'npm install'
-            }
-        }
+stages {
+stage('Install') {
+steps {
+nodejs('nodejs') {
+sh 'npm install'
+}
+}
+}
 
-        stage('Run App') {
-            steps {
-                bat 'node index.js'
-            }
-        }
-
-        stage('Test') {
-            steps {
-                bat 'npm test'
-            }
-        }
-    }
+stage('Build') {
+steps {
+nodejs('nodejs') {
+sh 'echo Build done'
+}
+}
+}
+}
 }
