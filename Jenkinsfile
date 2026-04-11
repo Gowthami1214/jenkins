@@ -1,21 +1,23 @@
 pipeline {
-agent any
+    agent any
 
-stages {
-stage('Install') {
-steps {
-nodejs('nodejs') {
-sh 'npm install'
-}
-}
-}
+    stages {
+        stage('Install') {
+            steps {
+                bat 'npm install'
+            }
+        }
 
-stage('Build') {
-steps {
-nodejs('nodejs') {
-sh 'echo Build done'
-}
-}
-}
-}
+        stage('Build') {
+            steps {
+                bat 'echo Build done'
+            }
+        }
+
+        stage('Test') {
+            steps {
+                bat 'npm test'
+            }
+        }
+    }
 }
