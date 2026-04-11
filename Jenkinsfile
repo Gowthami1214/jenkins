@@ -1,6 +1,3 @@
-
-12303842 - Abhishek Kumar Mandal
-11:30 AM
 pipeline {
 agent any
 
